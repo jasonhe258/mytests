@@ -13,33 +13,36 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run commands via SSH to setup environment on VM
-      uses: appleboy/ssh-action@master
-      with:
-        # TODO @Jason need to config the test env in Setting/Secrets of the Repo.
-        host: ${{ secrets.VM_IP }}
-        username: ${{ secrets.VM_USER }}
-        key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
-        port: ${{ secrets.VM_PORT }}
-        script: |
-          echo "Setup test environment"
+      #uses: appleboy/ssh-action@master
+      #with:
+      #  # TODO @Jason need to config the test env in Setting/Secrets of the Repo.
+      #  host: ${{ secrets.VM_IP }}
+      #  username: ${{ secrets.VM_USER }}
+      #  key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
+      #  port: ${{ secrets.VM_PORT }}
+      #  script: |
+      #    echo "Setup test environment"
+      run: echo "Installing dependencies ..."
           
     - name: Execute E2E Tests on VM
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.VM_IP }}
-        username: ${{ secrets.VM_USER }}
-        key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
-        port: ${{ secrets.VM_PORT }}
-        script: |
-          echo "Running E2E tests"
+      #uses: appleboy/ssh-action@master
+      #with:
+      #  host: ${{ secrets.VM_IP }}
+      #  username: ${{ secrets.VM_USER }}
+      #  key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
+      #  port: ${{ secrets.VM_PORT }}
+      #  script: |
+      #    echo "Running E2E tests"
+      run: echo "Running E2E tests ..."
 
           
     - name: Cleanup after tests
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.VM_IP }}
-        username: ${{ secrets.VM_USER }}
-        key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
-        port: ${{ secrets.VM_PORT }}
-        script: |
-          echo "Cleaning up test environment"
+      #uses: appleboy/ssh-action@master
+      #with:
+      #  host: ${{ secrets.VM_IP }}
+      #  username: ${{ secrets.VM_USER }}
+      #  key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
+      #  port: ${{ secrets.VM_PORT }}
+      #  script: |
+      #    echo "Cleaning up test environment"
+      run: echo "Cleaning up test environment ..."
