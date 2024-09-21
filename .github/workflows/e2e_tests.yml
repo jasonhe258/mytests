@@ -15,20 +15,22 @@ jobs:
     - name: Run commands via SSH to setup environment on VM
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.VM_IP }}
-        username: ${{ secrets.VM_USER }}
-        key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
-        port: ${{ secrets.VM_PORT }}
+        # TODO @Jason need to config the test env in Setting/Secrets of the Repo.
+        #host: ${{ secrets.VM_IP }}
+        #username: ${{ secrets.VM_USER }}
+        #key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
+        #port: ${{ secrets.VM_PORT }}
         script: |
           echo "Setup test environment"
           
     - name: Execute E2E Tests on VM
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.VM_IP }}
-        username: ${{ secrets.VM_USER }}
-        key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
-        port: ${{ secrets.VM_PORT }}
+        # TODO @Jason need to config the test env in Setting/Secrets of the Repo.
+        #host: ${{ secrets.VM_IP }}
+        #username: ${{ secrets.VM_USER }}
+        #key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
+        #port: ${{ secrets.VM_PORT }}
         script: |
           echo "Running E2E tests"
 
@@ -36,9 +38,10 @@ jobs:
     - name: Cleanup after tests
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.VM_IP }}
-        username: ${{ secrets.VM_USER }}
-        key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
-        port: ${{ secrets.VM_PORT }}
+        # TODO @Jason need to config the test env in Setting/Secrets of the Repo.
+        #host: ${{ secrets.VM_IP }}
+        #username: ${{ secrets.VM_USER }}
+        #key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
+        #port: ${{ secrets.VM_PORT }}
         script: |
           echo "Cleaning up test environment"
